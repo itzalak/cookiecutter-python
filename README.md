@@ -18,6 +18,7 @@ Simple and straightforward, no language configuration.
 For using release please, github actions requires permissions for creating and approving pull requests.
 
 In `Settings > Actions > General` find `Workflow permissions` and update
+
 - `Read and write permissions`
 - `Allow Github Actions to create and aprove pull requests`
 

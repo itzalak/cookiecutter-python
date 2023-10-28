@@ -61,4 +61,3 @@ repos:
         language: system
         pass_filenames: false
         verbose: true
-
