@@ -11,7 +11,11 @@ repos:
     rev: v4.5.0
     hooks:
       - id: check-yaml
-        exclude: ^{{ cookiecutter.project_slug }}/.github/workflows/release-please.yaml
+        exclude: >
+          (?x)^(
+            (.*)/.pre-commit-config.yaml|
+            (.*)/.github/workflows/release-please.yaml
+          )$
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: check-json
