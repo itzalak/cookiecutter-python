@@ -1,0 +1,13 @@
+{
+  "author": "Simao Ferreira",
+  "email": "simaoferreira@example.com",
+  "project_name": "cookiecutter-python",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "description": "generic-project-description",
+  "version": "0.1.0",
+  "python_version": "3.11",
+  "gh_actions": [
+    "y",
+    "n"
+  ]
+}
