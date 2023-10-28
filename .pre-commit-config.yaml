@@ -26,6 +26,10 @@ repos:
     hooks:
       - id: commitizen
         stages: [commit-msg]
+      - id: commitizen-branch
+        stages:
+          - post-commit
+          - push
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.37.0
