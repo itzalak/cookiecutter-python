@@ -17,6 +17,7 @@ def remove_dir(filepath: str) -> None:
 if __name__ == "__main__":
 
     if "{{cookiecutter.gh_actions}}" != "y":
-        remove_dir(".github")
+        remove_file(".github/workflows/release-please.yaml")
     else:
         remove_file(".cz.toml")
+        remove_file(".github/workflows/bumpversion.yaml")
