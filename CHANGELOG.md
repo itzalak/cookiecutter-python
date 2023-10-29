@@ -1,3 +1,13 @@
+## 1.1.0 (2023-10-29)
+
+### Feature
+
+- Add github action for automatic bump
+
+### Fix
+
+- Adjust templating to release please and commitizen options
+
 ## 1.0.0 (2023-10-28)
 
 ### Breaking Change
