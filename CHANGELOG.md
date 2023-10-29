@@ -1,3 +1,9 @@
+## v2.0.0 (2023-10-29)
+
+### Fix
+
+- Refactor for consistency
+
 ## 1.1.0 (2023-10-29)
 
 ### Feature
