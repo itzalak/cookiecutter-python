@@ -1,3 +1,9 @@
+## v2.0.1 (2023-10-29)
+
+### Fix
+
+- Add readme link to commitizen
+
 ## v2.0.0 (2023-10-29)
 
 ### Fix
