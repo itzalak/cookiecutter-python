@@ -2,7 +2,7 @@
 
 Simple cookiecutter for my personal python projects.
 
-Simple and straightforward, no language configuration.
+Simple and straightforward, configured for python with poetry.
 
 ## Configuration
 
