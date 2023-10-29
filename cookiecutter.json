@@ -6,11 +6,12 @@
   "email": "simaoferreira@example.com",
   "version": "0.1.0",
   "python_version": "3.11",
-  "gh_actions": [
+  "release_please": [
     "y",
     "n"
   ],
   "_copy_without_render": [
-    ".cz.toml"
+    ".cz.toml",
+    ".github/workflows/bumpversion.yaml"
   ]
 }
