@@ -7,6 +7,7 @@ Simple and straightforward, no language configuration.
 ## Configuration
 
 - [release please](https://github.com/googleapis/release-please) for github actions
+- [commitizen](https://commitizen-tools.github.io/commitizen/) for github actions
 - [pre commit config](https://github.com/pre-commit/pre-commit)
 - [markdown lint](https://github.com/igorshubovych/markdownlint-cli)
 - [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
