@@ -4,6 +4,9 @@ tag_format = "v$major.$minor.$patch"
 version_scheme = "semver"
 version = "0.1.0"
 update_changelog_on_bump = true
+version_files = [
+    "pyproject.toml",
+]
 
 [tool.commitizen.customize]
 message_template = "{{change_type}}:{% if show_message %} {{message}}{% endif %}"
