@@ -15,7 +15,6 @@ def remove_dir(filepath: str) -> None:
 
 
 if __name__ == "__main__":
-
     if "{{cookiecutter.release_please}}" != "y":
         remove_file(".github/workflows/release-please.yaml")
     else:

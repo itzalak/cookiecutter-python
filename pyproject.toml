@@ -1,3 +1,26 @@
+[tool.poetry]
+name = "cookiecutter-python"
+version = "v2.0.3"
+description = "Cookiecutter template for my python projects"
+authors = ["Simao Ferreira <sferreira@tutamail.com>"]
+license = ""
+readme = "README.md"
+keywords = ["cookiecutter", "python"]
+exclude = [
+    "{{ cookiecutter.project_slug }}/tests"
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^7.4.2"
+cookiecutter = "^2.4.0"
+toml = "^0.10.2"
+pytest-cookies = "^0.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.commitizen]
 name = "cz_customize"
 tag_format = "v$major.$minor.$patch"
@@ -20,3 +43,6 @@ This is customized info
 commit_parser = "^(?P<change_type>break|feat|chore|docs|fix):\\s(?P<message>.*)?"
 changelog_pattern = "^(break|feat|chore|docs|fix)?(!)?"
 change_type_map = { "break" = "Breaking Change", "feat" = "Feature", "fix" = "Fix", "chore" = "Patch", "docs" = "Patch" }
+
+[tool.pytest.ini_options]
+testpaths = 'tests'

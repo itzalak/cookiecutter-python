@@ -3,10 +3,11 @@ import sys
 
 from version import __version__
 
+
 def main():
     """Console script for {{cookiecutter.project_slug}}."""
     parser = argparse.ArgumentParser()
-    parser.add_argument('_', nargs='*')
+    parser.add_argument("_", nargs="*")
     args = parser.parse_args()
 
     print("Arguments: " + str(args._))
@@ -16,4 +17,4 @@ def main():
 
 
 if __name__ == "__main__":
-   sys.exit(main())
+    sys.exit(main())
