@@ -1,14 +1,11 @@
 [tool.poetry]
 name = "cookiecutter-python"
-version = "v2.0.3"
+version = "v2.0.4"
 description = "Cookiecutter template for my python projects"
 authors = ["Simao Ferreira <sferreira@tutamail.com>"]
 license = ""
 readme = "README.md"
 keywords = ["cookiecutter", "python"]
-exclude = [
-    "{{ cookiecutter.project_slug }}/tests"
-]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -27,6 +24,7 @@ tag_format = "v$major.$minor.$patch"
 version_scheme = "semver"
 version = "2.0.4"
 update_changelog_on_bump = true
+version_files = ["pyproject.toml"]
 
 [tool.commitizen.customize]
 message_template = "{{change_type}}:{% if show_message %} {{message}}{% endif %}"
