@@ -25,7 +25,7 @@ build-backend = "poetry.core.masonry.api"
 name = "cz_customize"
 tag_format = "v$major.$minor.$patch"
 version_scheme = "semver"
-version = "2.0.3"
+version = "2.0.4"
 update_changelog_on_bump = true
 
 [tool.commitizen.customize]

@@ -1,3 +1,10 @@
+## v2.0.4 (2023-10-30)
+
+### Patch
+
+- Include tests
+- Add commitizen help commands to makefile
+
 ## v2.0.3 (2023-10-29)
 
 ### Fix
