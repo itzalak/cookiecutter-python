@@ -1,3 +1,9 @@
+## v2.0.7 (2024-03-02)
+
+### Patch
+
+- Update pre commit configuration
+
 ## v2.0.6 (2024-01-23)
 
 ### Patch
