@@ -2,7 +2,7 @@
 name = "cookiecutter-python"
 version = "v2.0.7"
 description = "Cookiecutter template for my python projects"
-authors = ["Simao Ferreira <sferreira@tutamail.com>"]
+authors = ["Itzalak <itzalak@tuta.io>"]
 license = ""
 readme = "README.md"
 keywords = ["cookiecutter", "python"]

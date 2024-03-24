@@ -2,8 +2,8 @@
   "project_name": "cookiecutter-python",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
   "description": "generic-project-description",
-  "author": "Simao Ferreira",
-  "email": "sferreira@tutamail.com",
+  "author": "Itzalak",
+  "email": "itzalak@tuta.io",
   "version": "0.1.0",
   "python_version": "3.11",
   "release_please": [
