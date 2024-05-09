@@ -27,20 +27,14 @@ update_changelog_on_bump = true
 version_files = ["pyproject.toml"]
 
 [tool.commitizen.customize]
-message_template = "{{change_type}}:{% if show_message %} {{message}}{% endif %}"
-example = "feature: this feature enable customize through config file"
 schema = "<type>: <body>"
-schema_pattern = "(bump|break|feat|chore|docs|fix):(\\s.*)"
-bump_pattern = "^(bump|break|feat|chore|fix)"
-bump_map = { "break" = "MAJOR", "feat" = "MINOR", "fix" = "PATCH", "chore" = "PATCH", "docs" = "PATCH" }
-change_type_order = ["break", "feat", "fix", "chore", "docs"]
-info_path = "cz_customize_info.txt"
-info = """
-This is customized info
-"""
-commit_parser = "^(?P<change_type>break|feat|chore|docs|fix):\\s(?P<message>.*)?"
-changelog_pattern = "^(break|feat|chore|docs|fix)?(!)?"
-change_type_map = { "break" = "Breaking Change", "feat" = "Feature", "fix" = "Fix", "chore" = "Patch", "docs" = "Patch" }
+schema_pattern = "(bump|break|feat|chore|tools|docs|fix):(\\s.*)"
+bump_pattern = "^(bump|break|feat|tools|fix|chore)"
+bump_map = { "break" = "MAJOR", "feat" = "MINOR", "fix" = "PATCH", "tools" = "PATCH", "chore" = "PATCH", "docs" = "PATCH" }
+change_type_order = ["break", "feat", "fix", "tools", "chore", "docs"]
+commit_parser = "^(?P<change_type>break|feat|chore|tools|docs|fix):\\s(?P<message>.*)?"
+changelog_pattern = "^(break|feat|chore|tools|docs|fix)?(!)?"
+change_type_map = { "break" = "Breaking Change", "feat" = "Changed", "fix" = "Fixed", "tools" = "Tools", "chore" = "Changed", "docs" = "Notes" }
 
 [tool.pytest.ini_options]
 testpaths = 'tests'

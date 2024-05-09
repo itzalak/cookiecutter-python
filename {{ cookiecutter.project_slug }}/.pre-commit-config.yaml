@@ -8,7 +8,7 @@ default_stages:
 repos:
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
       - id: check-case-conflict
       - id: check-executables-have-shebangs
@@ -31,7 +31,7 @@ repos:
   {% if cookiecutter.release_please|lower != 'y' -%}
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: 3.12.0
+    rev: 3.22.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
@@ -42,7 +42,7 @@ repos:
 
   {% endif -%}
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.37.0
+    rev: v0.39.0
     hooks:
       - id: markdownlint
         # args:
@@ -52,20 +52,20 @@ repos:
         # exclude: '^(CHANGELOG.md)$'
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
-    rev: v1.3.2
+    rev: v1.3.3
     hooks:
       - id: python-safety-dependencies-check
         args: ["--disable-telemetry"]
 
   - repo: https://github.com/python-poetry/poetry
-    rev: 1.6.0
+    rev: 1.8.0
     hooks:
       - id: poetry-check
       - id: poetry-lock
         args: ["--no-update"]
 
   - repo: https://github.com/psf/black
-    rev: 23.10.1
+    rev: 24.4.2
     hooks:
       - id: black
 
