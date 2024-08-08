@@ -1,3 +1,9 @@
+## v2.0.10 (2024-08-08)
+
+### Tools
+
+- update template dependecies
+
 ## v2.0.9 (2024-05-09)
 
 ### Changed
