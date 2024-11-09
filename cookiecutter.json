@@ -12,6 +12,7 @@
   ],
   "_copy_without_render": [
     ".cz.toml",
-    ".github/workflows/bumpversion.yaml"
+    ".github/workflows/bumpversion.yaml",
+    "taskfile.yml"
   ]
 }

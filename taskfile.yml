@@ -1,0 +1,81 @@
+version: '3'
+
+tasks:
+
+  default:
+    desc: Default
+    cmds:
+      - |
+        echo "Home dir: {{.HOME}}"
+        echo "Root dir: {{.ROOT_DIR}}"
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
+  assert:
+    cmds:
+      - for:
+          var: REQUIRED_TOOLS
+          split: ','
+          as: TOOL
+        cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
+    internal: true
+    vars:
+      REQUIRED_TOOLS: pre-commit, poetry
+
+  setup:
+    deps: [assert]
+    desc: Set up poetry and pre-commit
+    cmds:
+      - task: precommit-setup
+      - task: poetry-setup
+
+  update:
+    deps: [assert]
+    desc: Update poetry and pre-commit
+    cmds:
+      - task: poetry-update
+      - pre-commit autoupdate
+
+  precommit-setup:
+    deps: [assert]
+    desc: Initialize pre-commit
+    cmds:
+      - pre-commit install
+      - pre-commit autoupdate
+
+  precommit-run:
+    aliases: [run]
+    deps: [assert]
+    desc: Run pre-commit on all files
+    cmds:
+      - pre-commit run --color always --all-files
+
+  poetry-setup:
+    deps: [assert]
+    desc: Poetry local setup and install
+    cmds:
+      - poetry config virtualenvs.in-project true
+      - rm -rf .venv
+      - rm -rf venv
+      - poetry install
+      - poetry env info --path
+
+  poetry-update:
+    deps: [assert]
+    desc: Update poetry dependencies
+    cmds:
+      - poetry update
+      - poetry self update
+
+  poetry-test:
+    aliases: [test]
+    deps: [assert]
+    desc: Run tests using poetry (documentation)
+    cmds:
+      - poetry run pytest

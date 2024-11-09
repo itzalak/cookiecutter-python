@@ -3,40 +3,44 @@ default_install_hook_types:
   - commit-msg
 
 default_stages:
-  - commit
+  - pre-commit
 
 repos:
-
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v5.0.0
     hooks:
+      - id: check-builtin-literals
+        exclude: '{{ cookiecutter.project_slug }}'
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-symlinks
+      - id: check-toml
       - id: check-yaml
         exclude: >
           (?x)^(
             (.*)/.pre-commit-config.yaml|
             (.*)/.github/workflows/release-please.yaml
           )$
-      - id: end-of-file-fixer
-      - id: trailing-whitespace
-      - id: check-json
       - id: check-executables-have-shebangs
       - id: check-shebang-scripts-are-executable
-      - id: check-symlinks
-      - id: check-case-conflict
       - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: name-tests-test
+      - id: trailing-whitespace
+        exclude: '^\.gitignore$'
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.28.0
+    rev: v3.30.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
       - id: commitizen-branch
         stages:
           - post-commit
-          - push
+          - pre-push
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.41.0
+    rev: v0.42.0
     hooks:
       - id: markdownlint
         args:
@@ -44,6 +48,13 @@ repos:
           - .markdownlint.yaml
           - --fix
         exclude: '^(CHANGELOG.md)$'
+
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.3.3
+    hooks:
+      - id: python-safety-dependencies-check
+        args: ['--disable-optional-telemetry', '--ignore=70612']
+        exclude: '{{ cookiecutter.project_slug }}/pyproject.toml'
 
   - repo: https://github.com/python-poetry/poetry
     rev: 1.8.0
@@ -53,11 +64,32 @@ repos:
         args: ["--no-update"]
 
   - repo: https://github.com/psf/black
-    rev: 24.8.0
+    rev: 24.10.0
     hooks:
       - id: black
-        exclude: '^(.*)/tests/test_version.py'
+        exclude: '{{ cookiecutter.project_slug }}/tests/version_test.py'
 
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.29.4
+    hooks:
+      - id: check-taskfile
+      - id: check-github-workflows
+
+  - repo: https://github.com/google/yamlfmt
+    rev: v0.14.0
+    hooks:
+      - id: yamlfmt
+        args: ['-formatter', 'retain_line_breaks=true']
+        exclude: >
+          (?x)^(
+            (.*)/.pre-commit-config.yaml|
+            (.*)/.github/workflows/release-please.yaml
+          )$
+
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.10.0-1
+    hooks:
+      - id: shfmt
 
   - repo: local
     hooks:
