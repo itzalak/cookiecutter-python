@@ -1,3 +1,9 @@
+## v2.1.0 (2024-11-09)
+
+### Changed
+
+- update template tools, add taskfile
+
 ## v2.0.10 (2024-08-08)
 
 ### Tools
