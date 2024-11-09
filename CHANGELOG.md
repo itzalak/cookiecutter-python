@@ -1,3 +1,9 @@
+## v2.1.1 (2024-11-09)
+
+### Changed
+
+- update python version
+
 ## v2.1.0 (2024-11-09)
 
 ### Changed
